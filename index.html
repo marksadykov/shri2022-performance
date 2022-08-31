@@ -302,10 +302,7 @@
         </footer>
 
         <link rel="stylesheet" href="styles.css" media="none" onload="if(media!=='all')media='all'">
-        <noscript>
-            <link rel="stylesheet" href="styles.css">
-        </noscript>
-        <script defer>
+        <script async>
             function bind(nodes, event, handler) {
                 nodes.forEach(node => {
                     node.addEventListener(event, handler);
