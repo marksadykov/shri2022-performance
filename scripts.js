@@ -93,7 +93,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        Array.from(document.querySelectorAll('.main__devices')).forEach(makeTabs);
-        Array.from(document.querySelectorAll('.header__menu')).forEach(makeMenu);
+        makeTabs(document.getElementsByClassName('main__devices')[0]);
+        makeMenu(document.getElementsByClassName('header__menu')[0]);
     });
 })();
