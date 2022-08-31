@@ -1,13 +1,9 @@
 html, body, div, span,
 h2, h3, h4, p, pre,
 a,
-dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+ul, li,
+footer, header,
+section {
     margin: 0;
     padding: 0;
     border: 0;
