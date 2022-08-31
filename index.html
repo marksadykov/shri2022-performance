@@ -136,11 +136,11 @@
                     </select>
 
                     <ul role="tablist" class="section__tabs">
-                        <li role="tab" class="section__tab section__tab_active" id="tab_all" aria-controls="panel_all" data-id="all">Все</li>
-                        <li role="tab" class="section__tab" id="tab_kitchen" aria-controls="panel_kitchen" data-id="kitchen">Кухня</li>
-                        <li role="tab" class="section__tab" id="tab_hall" aria-controls="panel_hall" data-id="hall">Зал</li>
-                        <li role="tab" class="section__tab" id="tab_lights" aria-controls="panel_lights" data-id="lights">Лампочки</li>
-                        <li role="tab" class="section__tab" id="tab_cameras" aria-controls="panel_cameras" data-id="cameras">Камеры</li>
+                        <li role="tab" aria-selected="true" tabindex="0" class="section__tab section__tab_active" id="tab_all" aria-controls="panel_all" data-id="all">Все</li>
+                        <li role="tab" aria-selected="false" class="section__tab" id="tab_kitchen" aria-controls="panel_kitchen" data-id="kitchen">Кухня</li>
+                        <li role="tab" aria-selected="false" class="section__tab" id="tab_hall" aria-controls="panel_hall" data-id="hall">Зал</li>
+                        <li role="tab" aria-selected="false" class="section__tab" id="tab_lights" aria-controls="panel_lights" data-id="lights">Лампочки</li>
+                        <li role="tab" aria-selected="false" class="section__tab" id="tab_cameras" aria-controls="panel_cameras" data-id="cameras">Камеры</li>
                     </ul>
                 </div>
 
@@ -333,11 +333,11 @@
                     selected = newId;
 
                     oldTab.classList.remove('section__tab_active');
-                    // oldTab.setAttribute('aria-selected', 'false');
-                    // oldTab.setAttribute('tabindex', '1');
+                    oldTab.setAttribute('aria-selected', 'false');
+                    oldTab.removeAttribute('tabindex')
                     newTab.classList.add('section__tab_active');
-                    // newTab.setAttribute('aria-selected', 'true');
-                    // newTab.setAttribute('tabindex', '0');
+                    newTab.setAttribute('aria-selected', 'true');
+                    newTab.setAttribute('tabindex', '0');
                     newTab.focus({
                         preventScroll: true
                     });
