@@ -5,8 +5,7 @@
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0">
         <title>Яндекс.Дом</title>
-    <!--    <link rel="stylesheet" type="text/css" href="styles.css">-->
-        <link rel="stylesheet" href="styles.css" media="none" onload="if(media!='all')media='all'">
+        <link rel="stylesheet" href="styles.css" media="none" onload="if(media!=='all')media='all'">
 
     </head>
     <body>
@@ -307,15 +306,21 @@
 
         <script defer>
             function bind(nodes, event, handler) {
-                Array.from(nodes).forEach(node => {
+                nodes.forEach(node => {
                     node.addEventListener(event, handler);
                 });
             }
 
             function makeTabs(node) {
                 let selected = node.querySelector('.section__tab_active').dataset.id;
-                const tabs = node.querySelectorAll('.section__tab');
-                const list = Array.from(tabs).map(node => node.dataset.id);
+
+                const tabKitchen = document.getElementById('tab_kitchen');
+                const tabHall = document.getElementById('tab_hall');
+                const tabLights = document.getElementById('tab_lights');
+                const tabCameras = document.getElementById('tab_cameras');
+
+                const tabs = [tabKitchen, tabHall, tabLights, tabCameras];
+                const list = tabs.map(node => node.dataset.id);
                 const select = node.querySelector('.section__select');
 
                 function selectTab(newId) {
