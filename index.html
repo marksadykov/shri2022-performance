@@ -302,7 +302,7 @@
         </footer>
 
         <link rel="stylesheet" href="styles.css" media="none" onload="if(media!=='all')media='all'">
-        <script async>
+        <script defer>
             function bind(nodes, event, handler) {
                 nodes.forEach(node => {
                     node.addEventListener(event, handler);
@@ -348,9 +348,9 @@
                     select.value = newId;
                 }
 
-                select.addEventListener('input', () => {
-                    selectTab(select.value);
-                });
+                // select.addEventListener('input', () => {
+                //     selectTab(select.value);
+                // });
 
                 bind(tabs, 'click', event => {
                     const newId = event.target.dataset.id;
@@ -393,13 +393,15 @@
 
 
             const headerMenu = document.querySelector('.header__menu');
+            const headerMenuText = headerMenu.querySelector('.header__menu-text');
+
             let expanded = false;
             const links = document.querySelector('.header__links');
 
             headerMenu.addEventListener('click', () => {
                 expanded = !expanded;
                 headerMenu.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-                headerMenu.querySelector('.header__menu-text').textContent = expanded ? 'Закрыть меню' : 'Открыть меню';
+                headerMenuText.textContent = expanded ? 'Закрыть меню' : 'Открыть меню';
                 links.classList.toggle('header__links_opened', expanded);
                 links.classList.add('header__links-toggled');
             });
